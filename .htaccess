@@ -1,0 +1,20 @@
+# =========================================================
+# HotelRoomBookingSystem - Root .htaccess
+# Upload this file to: htdocs/HotelRoomBookingSystem/.htaccess
+# =========================================================
+
+# Block direct access to sensitive file types anywhere in the project
+<FilesMatch "\.(sql|env|md|log|ini|bak|config)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Block direct access to sensitive folders
+RewriteEngine On
+RewriteRule ^config/ - [F,L]
+RewriteRule ^database/ - [F,L]
+RewriteRule ^models/ - [F,L]
+RewriteRule ^controllers/ - [F,L]
+
+# Set default index file
+DirectoryIndex index.php index.html

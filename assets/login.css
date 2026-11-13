@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Jost:wght@400;500&display=swap');
+
+:root {
+    --navy: #0f2340;
+    --navy-deep: #081527;
+    --emerald: #1f4d3f;
+    --gold: #c9a24b;
+    --gold-soft: #e4cd8f;
+    --page-bg: #1b2a3d;
+    --card: #fffdf8;
+    --ivory: #f3ede1;
+    --error: #c0553c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Jost', Georgia, serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(201, 162, 75, 0.10), transparent 45%),
+        linear-gradient(150deg, var(--page-bg) 0%, var(--navy-deep) 100%);
+    padding: 24px;
+}
+
+.container {
+    display: flex;
+    min-height: 460px;
+    width: 100%;
+    max-width: 880px;
+    margin: 20px auto;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px -25px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(201, 162, 75, 0.15);
+}
+
+/* ---------- Left / brand panel ---------- */
+
+.left-panel {
+    width: 45%;
+    position: relative;
+    background: linear-gradient(165deg, var(--emerald) 0%, var(--navy) 55%, var(--navy-deep) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 44px;
+    overflow: hidden;
+}
+
+.left-panel::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(201, 162, 75, 0.35);
+    pointer-events: none;
+}
+
+.left-panel::after {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    right: -140px;
+    top: -140px;
+    background: radial-gradient(circle, rgba(201, 162, 75, 0.18), transparent 70%);
+}
+
+.panel-brand {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: var(--gold-soft);
+    margin-bottom: 18px;
+    z-index: 1;
+}
+
+.panel-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.25;
+    margin-bottom: 14px;
+    z-index: 1;
+}
+
+.panel-sub {
+    font-size: 13.5px;
+    color: #a9bfe0;
+    line-height: 1.8;
+    letter-spacing: 0.3px;
+    z-index: 1;
+    padding-top: 14px;
+    border-top: 1px solid rgba(201, 162, 75, 0.35);
+}
+
+/* ---------- Right / form panel ---------- */
+
+.login-container {
+    width: 55%;
+    padding: 48px 52px;
+    background-color: var(--ivory);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    margin: 0 0 6px;
+    color: var(--navy);
+    letter-spacing: 0.3px;
+}
+
+.login-container>p {
+    margin: 0 0 26px;
+    color: #6b7688;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+}
+
+#loginForm {
+    background: var(--card);
+    border: 1px solid #e3dcc7;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 16px 32px -20px rgba(15, 35, 64, 0.35), 0 2px 6px rgba(15, 35, 64, 0.06);
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: var(--navy);
+    margin-top: 14px;
+    margin-bottom: 6px;
+}
+
+#email,
+#password {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #d7dce6;
+    border-radius: 8px;
+    background-color: #f7f8fb;
+    font-size: 15px;
+    font-family: 'Jost', Georgia, serif;
+    color: var(--navy);
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#email::placeholder,
+#password::placeholder {
+    color: #9aa3b4;
+}
+
+#email:focus,
+#password:focus {
+    border-color: var(--gold);
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(201, 162, 75, 0.18);
+}
+
+#emailError,
+#passError {
+    color: var(--error);
+    font-size: 12.5px;
+    margin-top: 4px;
+    display: block;
+    min-height: 16px;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--navy);
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    margin-top: 18px;
+}
+
+#loginForm>label[for="remember_me"] {
+    display: inline;
+    margin-left: 6px;
+    font-weight: 400;
+    color: #4a5468;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 13px;
+    margin-top: 22px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    box-shadow: 0 10px 20px -8px rgba(10, 23, 47, 0.5);
+    transform: translateY(-1px);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+button[type="submit"]:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+#registerLink {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 13px;
+    color: #7c869a;
+}
+
+#registerLink a {
+    color: var(--navy);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 1px;
+}
+
+#registerLink a:hover {
+    color: var(--gold);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+    .container {
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    .left-panel,
+    .login-container {
+        width: 100%;
+    }
+
+    .left-panel {
+        padding: 32px;
+    }
+
+    .panel-heading {
+        font-size: 26px;
+    }
+
+    .login-container {
+        padding: 32px 24px;
+    }
+}

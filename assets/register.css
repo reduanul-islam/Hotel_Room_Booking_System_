@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background-color: #f0f4f8;
+}
+
+.container {
+    display: flex;
+    min-height: 400px;
+    width: 60%;
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.left-panel {
+    width: 45%;
+    background-color: #1a3a6b;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+    border-radius: 8px 0 0 8px;
+}
+
+.panel-brand {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 12px;
+}
+
+.panel-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.right-panel {
+    width: 55%;
+    padding: 40px;
+    background-color: #f0f4f8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+h2 {
+    color: #1a3a6b;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    font-size: 22px;
+}
+
+#createAccount {
+    color: #1a3a6b;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+
+#registerForm {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+label {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-input {
+    width: 100%;
+    padding: 6px 12px;
+    display: block;
+    border: 2px solid #1a3a6b;
+    border-radius: 15px;
+    background-color: #e8eef5;
+    font-size: 15px;
+    font-family: Cambria, serif;
+    box-sizing: border-box;
+    transition: border-color 0.15s, background-color 0.15s;
+}
+
+.form-input:focus {
+    border-color: #0d2a52;
+    border-width: 3px;
+    outline: none;
+    background-color: #dce6f0;
+}
+
+.error-message {
+    color: #d9534f;
+    font-size: 13px;
+    margin-top: 3px;
+    display: block;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 11px;
+    margin-top: 18px;
+    background-color: #1a3a6b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Cambria, serif;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #0d2a52;
+}
+
+#registerForm + p {
+    text-align: center;
+    margin-top: 14px;
+    font-size: 13px;
+    color: #888;
+}
+
+#registerForm + p a {
+    color: #1a3a6b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#registerForm + p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+        width: 92%;
+    }
+
+    .left-panel,
+    .right-panel {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .left-panel {
+        padding: 24px;
+    }
+}
